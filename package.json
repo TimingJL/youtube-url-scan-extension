@@ -15,6 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "move": "npm run build && rm -rf ./static && mv build/static ./",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
