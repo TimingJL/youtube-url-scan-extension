@@ -25,5 +25,9 @@
     "48": "/images/get_started48.png",
     "128": "/images/get_started128.png"
   },
-  "content_security_policy": "script-src 'self' 'sha256-hFgKBb9DIdh0bYVrbQmi6TAjWp3OpbO9DGK993+hqYI=';"
+  "content_security_policy": "script-src 'self' 'sha256-hFgKBb9DIdh0bYVrbQmi6TAjWp3OpbO9DGK993+hqYI=';",
+  "content_scripts": [{
+    "matches" : ["*://*/*"],
+    "js": ["content.js"]
+  }]
 }
