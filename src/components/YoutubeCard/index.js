@@ -36,11 +36,20 @@ const CopyButton = styled.div`
 
 const PreviewImage = styled.div`
   border-radius: 4px;
-  height: 32px;
-  width: 60px;
+  /* height: 32px;
+  width: 60px; */
+  height: 130px;
+  width: 230px;
   background: url(${({ $thumbnailUrl }) => $thumbnailUrl});
   background-position: center;
   background-size: cover;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: flex-end;
 `;
 
 const YoutubeCard = ({ link }) => {
@@ -56,14 +65,16 @@ const YoutubeCard = ({ link }) => {
   return (
     <Wrapper>
       <PreviewImage $thumbnailUrl={thumbnail.default.url} />
-      <Input
-        ref={inputRef}
-        type="text"
-        value={link}
-      />
-      <CopyButton onClick={handleOnCopy}>
-        複製
-      </CopyButton>
+      <Content>
+        <Input
+          ref={inputRef}
+          type="text"
+          value={link}
+        />
+        <CopyButton onClick={handleOnCopy}>
+          複製
+        </CopyButton>
+      </Content>
     </Wrapper>
   )
 };
