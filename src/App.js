@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { loadLinks } from './main';
+import { scanYoutubeLinks } from './scripts/ScanYoutubeLinks';
 import YoutubeCard from './components/YoutubeCard';
 
 const ExtensionBox = styled.div`
@@ -32,7 +32,7 @@ const App = () => {
   const hasAnyLink = links.length > 0;
 
   useEffect(() => {
-    loadLinks({ setLinks });
+    scanYoutubeLinks({ setLinks });
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 /* global chrome */
 
-export async function loadLinks({ setLinks }) {
+export async function scanYoutubeLinks({ setLinks }) {
   chrome.runtime.onMessage.addListener((links) => {
     var allLinks = [];
     for (var index in links) {
@@ -18,7 +18,7 @@ export async function loadLinks({ setLinks }) {
       },
       (activeTabs) => {
         chrome.tabs.executeScript(activeTabs[0].id, {
-          file: 'src/scripts/sendLinks.js', allFrames: true
+          file: 'src/scripts/ScanYoutubeLinks/sendLinks.js', allFrames: true
         });
       }
     );
