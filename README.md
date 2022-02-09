@@ -12,3 +12,7 @@ npm run move
 4. 找到該專案，在包含「static」資料夾的根目錄中按下「選取」
 
 ![](https://i.imgur.com/dEhlRj0.png)
+
+
+Demo:
+![](https://i.imgur.com/HbP8X6r.png)
