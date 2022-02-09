@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   & > *:not(:first-child) {
-    margin-left: 4px;
+    margin-left: 12px;
   }
 `;
 
