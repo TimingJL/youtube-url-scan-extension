@@ -2,6 +2,8 @@ import { useRef } from 'react';
 import styled from 'styled-components';
 import * as youtubeThumbnail from 'youtube-thumbnail';
 
+const CARD_HEIGHT = 72;
+
 const Input = styled.input`
   width: 100%;
   height: 32px;
@@ -22,7 +24,7 @@ const Wrapper = styled.div`
 const CopyButton = styled.div`
   cursor: pointer;
   height: 32px;
-  width: 80px;
+  width: ${CARD_HEIGHT}px;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -35,11 +37,10 @@ const CopyButton = styled.div`
 `;
 
 const PreviewImage = styled.div`
+  flex: 0 0 145px;
   border-radius: 4px;
-  /* height: 32px;
-  width: 60px; */
-  height: 130px;
-  width: 230px;
+  height: ${CARD_HEIGHT}px;
+  width: 145px;
   background: url(${({ $thumbnailUrl }) => $thumbnailUrl});
   background-position: center;
   background-size: cover;
@@ -48,8 +49,10 @@ const PreviewImage = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: space-between;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: ${CARD_HEIGHT}px;
 `;
 
 const YoutubeCard = ({ link }) => {

@@ -11,11 +11,11 @@ const ExtensionBox = styled.div`
   overflow-y: auto;
 `;
 
-const InputGroup = styled.div`
+const CardGroup = styled.div`
   display: flex;
   flex-direction: column;
   & > *:not(:first-child) {
-    margin-top: 8px;
+    margin-top: 12px;
   }
 `;
 
@@ -39,7 +39,7 @@ const App = () => {
     <ExtensionBox $hasAnyLink={hasAnyLink}>
       {
         hasAnyLink > 0 ? (
-          <InputGroup>
+          <CardGroup>
             {
               links.map((link) => (
                 <YoutubeCard
@@ -48,7 +48,7 @@ const App = () => {
                 />
               ))
             }
-          </InputGroup>
+          </CardGroup>
         ) : (
           <EmptyInfo>
             沒有找到 Youtube 連結
