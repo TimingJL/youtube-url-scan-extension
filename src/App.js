@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import './App.css';
+
 import { loadLinks } from './main';
 import YoutubeCard from './components/YoutubeCard';
 
 const ExtensionBox = styled.div`
-  width: 400px;
+  width: ${({ $hasAnyLink }) => $hasAnyLink ? 400 : 300}px;
   max-height: 300px;
   padding: 20px;
   overflow-y: auto;
@@ -23,20 +23,22 @@ const EmptyInfo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #00000042;
+  color: #00000080;
+  font-size: 14px;
 `;
 
 const App = () => {
   const [links, setLinks] = useState([]);
+  const hasAnyLink = links.length > 0;
 
   useEffect(() => {
     loadLinks({ setLinks });
   }, []);
 
   return (
-    <ExtensionBox>
+    <ExtensionBox $hasAnyLink={hasAnyLink}>
       {
-        links.length > 0 ? (
+        hasAnyLink > 0 ? (
           <InputGroup>
             {
               links.map((link) => (
