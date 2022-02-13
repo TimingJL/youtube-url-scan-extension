@@ -41,4 +41,9 @@ function youtubeParser(url) {
 }
 
 var youtubeLinks = links.filter((link) => youtubeParser(link));
-chrome.runtime.sendMessage(youtubeLinks);
+var allLinks = [];
+for (var index in youtubeLinks) {
+  allLinks.push(youtubeLinks[index]);
+}
+allLinks.sort();
+chrome.runtime.sendMessage(allLinks);

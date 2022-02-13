@@ -19,6 +19,12 @@
       "128": "/images/website.png"
     }
   },
+  "background": {
+    "scripts": [
+      "src/background.js"
+    ],
+    "persistent": false
+  },
   "icons": {
     "16": "/images/website.png",
     "32": "/images/website.png",

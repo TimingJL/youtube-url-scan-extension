@@ -1,12 +1,7 @@
 /* global chrome */
 
 export async function scanYoutubeLinks({ setLinks }) {
-  chrome.runtime.onMessage.addListener((links) => {
-    var allLinks = [];
-    for (var index in links) {
-      allLinks.push(links[index]);
-    }
-    allLinks.sort();
+  chrome.runtime.onMessage.addListener((allLinks) => {
     setLinks(allLinks);
   });
 
@@ -18,7 +13,7 @@ export async function scanYoutubeLinks({ setLinks }) {
       },
       (activeTabs) => {
         chrome.tabs.executeScript(activeTabs[0].id, {
-          file: 'src/scripts/ScanYoutubeLinks/sendLinks.js', allFrames: true
+          file: 'src/scripts/ScanYoutubeLinks/parseLinks.js', allFrames: true
         });
       }
     );
